@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <v-footer padless dark>
+  <v-footer padless color="#333333">
     <v-col>
     <input type="radio" id="noAr" class="radioStatus" color= "#FF8700" checked="checked" cols="1" />
         <label for="noAr" class="status"> No Ar</label>
@@ -92,11 +92,14 @@ export default {
     font-family: material;
     font-weight: 400;
     font-size: 16px;
-    border-color: #FF8700;
-    color:#FF8700;
-    background-color: #FF8700;
     text-align:left;
     vertical-align: top;
+}
+
+.radioStatus:checked{
+  border-color: #FF8700;
+    color:#FF8700;
+    background: #FF8700;
 }
 .status{
    width:45px;

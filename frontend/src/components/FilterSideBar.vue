@@ -1,7 +1,7 @@
 <template>
   <div class="text-center" style="background-color:#FFFFFF;margin-right:5px;height:100%;" >
     <v-btn  ef="" target="_blank"  text style="background-color:#FFFFFF;margin-right:5px;height:100%;"  @click="sheet = !sheet" >
-        <v-img class="shrink mr-2" contain :src="require('@/assets/tune.png')" transition="scale-transition"  />
+        <v-img class="shrink mr-2" contain :src="require('@/assets/tune.png')" transition="scale-transition" width="20" height="20"  />
     </v-btn>
     <v-bottom-sheet v-model="sheet">
       <v-sheet
@@ -17,7 +17,6 @@
           close
         </v-btn>
         <div class="py-3">
-          This is a bottom sheet using the controlled by v-model instead of activator
         </div>
       </v-sheet>
     </v-bottom-sheet>
