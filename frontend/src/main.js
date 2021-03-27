@@ -7,7 +7,6 @@ import '@mdi/font/css/materialdesignicons.css'
 import moment from './plugins/moment'
 
 Vue.use(moment)
-
 Vue.config.productionTip = false
 
 new Vue({

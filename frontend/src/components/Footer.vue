@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <v-footer padless dark>
     <v-col>
@@ -45,31 +46,58 @@
       class="text-center"
       cols="2"
     >
-     <!-- {{ this.momentInstance.format('dddd[.], DD [de] MMMM [de] YYYY') }} -->
+      <div class="data"> {{ this.momentInstance.format('dddd[.], DD [de] MMMM [de] YYYY') }} </div>
     </v-col>
     <v-col
       class="text-center"
       cols="2"
     >
-     <!-- <h4 class="light">// {{ this.momentInstance.format('HH:mm:ss') }} </h4> -->
+     <div class="hora" >// {{ this.momentInstance.format('HH:mm:ss') }} </div>
     </v-col>
   </v-footer>
 </template>
 
 <script>
-/*
+import moment from 'moment'
+
 export default {
   data () {
     return {
-      momentInstance: moment()
+      interval: null,
+      time: null,
+      momentInstance: moment
     }
   },
-  mounted () {
-    setInterval(() => {
-      this.momentInstance = moment()
+  beforeDestroy () {
+    // prevent memory leak
+    clearInterval(this.interval)
+  },
+  created () {
+    // update the time every second
+    this.interval = setInterval(() => {
+      // Concise way to format time according to system locale.
+      // In my case this returns "3:48:00 am"
+      this.time = Intl.DateTimeFormat(navigator.language, {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+      }).format()
     }, 1000)
   }
 }
-*/
 
 </script>
+<style>
+
+.data{
+    width: ;
+}
+.hora {
+   width:155px;
+   height:31px;
+   font-size:24px;
+   font-weight: 400;
+   color:#FF8700;
+   text-align: right;
+}
+</style>

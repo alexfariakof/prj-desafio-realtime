@@ -28,7 +28,7 @@
         />
 
       </div>
-      <div d-flex align-center style="width:52; height:48;">
+      <div d-flex align-center style="width:52; height:48;background-image: linear-gradient(224.78317304448626deg, #FF8700, #D83367);">
              <v-img style="background-image: linear-gradient(224.78317304448626˚, #FF8700, #D83367);"
           alt="Person"
           class=""
@@ -55,7 +55,7 @@
       <FilterSideBar/>
       </div >
       <div >
-      <v-btn  href="" target="_blank"  text style="background-color:#D83367" >
+      <v-btn  href="" target="_blank"  text style="background-color:#D83367;color:#FFFFFF" >
         <v-img  alt="Person" class="shrink mr-2" contain :src="require('@/assets/person.png')" transition="scale-transition"  />
         <span class="mr-2">INCLUIR USUÁRIO</span>
       </v-btn>
