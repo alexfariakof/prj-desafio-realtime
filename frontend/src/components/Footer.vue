@@ -2,14 +2,9 @@
 <template>
   <v-footer padless dark>
     <v-col>
-    <input type="radio" id="noAr"
-     color= "#FF8700"
-     checked="checked"
-     text="NO AR"
-     cols="1"
-     />
-     <label for="noAr"> No Ar</label>
-         </v-col>
+    <input type="radio" id="noAr" class="radioStatus" color= "#FF8700" checked="checked" cols="1" />
+        <label for="noAr" class="status"> No Ar</label>
+    </v-col>
     <v-col
       class="text-left"
       cols="3"
@@ -23,7 +18,7 @@
           width="16"
           height="16"
         />
-       <span > ENCONTRO 10:00</span>
+       <span class="mensagem" > ENCONTRO 10:00</span>
        </div>
     </v-col>
    <v-col
@@ -39,44 +34,49 @@
           width="16"
           height="16"
         />
-       <span > Última Atualização em 10:28</span>
+       <span class="textAtualizacao" > Última Atualização em 10:28</span>
        </div>
     </v-col>
     <v-col
       class="text-center"
       cols="2"
     >
-      <div class="data"> {{ this.momentInstance.format('dddd[.], DD [de] MMMM [de] YYYY') }} </div>
+       <div class="data">
+        <span class="formatData1">{{ semana }}, </span>
+        <span class="formatData2">{{ dia }}</span>
+        <span class="formatData1" > de </span>
+        <span class="formatData2">{{ mes }}</span>
+        <span class="formatData1" > de </span>
+        <span class="formatData2">{{ ano }}</span>
+       </div>
     </v-col>
     <v-col
       class="text-center"
       cols="2"
     >
-     <div class="hora" >// {{ this.momentInstance.format('HH:mm:ss') }} </div>
+     <div class="hora" >// {{ time }} </div>
     </v-col>
   </v-footer>
 </template>
 
 <script>
 import moment from 'moment'
-
 export default {
   data () {
     return {
       interval: null,
       time: null,
-      momentInstance: moment
+      semana: moment(new Date()).format('dddd'),
+      dia: moment(new Date()).format('DD'),
+      mes: moment(new Date()).format('MMMM'),
+      ano: moment(new Date()).format('YYYY')
     }
   },
   beforeDestroy () {
-    // prevent memory leak
     clearInterval(this.interval)
   },
   created () {
-    // update the time every second
     this.interval = setInterval(() => {
-      // Concise way to format time according to system locale.
-      // In my case this returns "3:48:00 am"
       this.time = Intl.DateTimeFormat(navigator.language, {
         hour: 'numeric',
         minute: 'numeric',
@@ -88,9 +88,64 @@ export default {
 
 </script>
 <style>
-
+.radioStatus{
+    font-family: material;
+    font-weight: 400;
+    font-size: 16px;
+    border-color: #FF8700;
+    color:#FF8700;
+    background-color: #FF8700;
+    text-align:left;
+    vertical-align: top;
+}
+.status{
+   width:45px;
+   height:15px;
+   font-family: Audiowide;
+   font-weight: 400;
+   font-size:12px;
+   color:#FF8700;
+   text-align: right;
+    text-align:left;
+    vertical-align: top;
+}
+.mensagem{
+    width:121px;
+    height: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+    color:#E9E9E9;
+    text-align: left;
+    vertical-align: text-top;
+}
+.textAtualizacao{
+    width:175px;
+    height:16px;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color:#E9E9E9;
+}
 .data{
-    width: ;
+    width:auto;
+    height:16px;
+    text-align: right;
+}
+.formatData1{
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color:#E9E9E9;
+}
+.formatData2{
+    font-family: Roboto;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 500;
+    color:#E9E9E9;
 }
 .hora {
    width:155px;
@@ -99,5 +154,6 @@ export default {
    font-weight: 400;
    color:#FF8700;
    text-align: right;
+   font-family: Audiowide;
 }
 </style>
