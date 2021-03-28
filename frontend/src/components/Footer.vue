@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <v-footer padless color="#333333" width="100%">
-    <v-col cols="1">
+  <v-footer padless color="#333333" width="100%" style="padding-bottom:50px; padding-right:10px">
+    <v-col cols="1" >
       <input type="radio" id="noAr" class="radioStatus" color= "#FF8700" checked="checked" style="float:left; margin-top:4px; margin-right:8px;"  />
       <label for="noAr" class="status"> NO AR</label>
     </v-col>
@@ -49,7 +49,7 @@
         <span class="formatData2">{{ mes }}</span>
         <span class="formatData1" > de </span>
         <span class="formatData2">{{ ano }}</span>
-        <span class="hora" >// {{ time }}</span>
+        <span class="hora" > // {{ time }}</span>
        </div>
     </v-col>
   </v-footer>
@@ -150,15 +150,10 @@ export default {
     vertical-align: text-top;
 }
 .hora {
-   width:155px;
    height:31px;
    font-family: 'Audiowide';
    font-size:24px;
    font-weight: 400;
    color:#FF8700;
-   text-align: right;
-   vertical-align: text-top;
-   float: right;
-   margin-bottom: 8px;
 }
 </style>
