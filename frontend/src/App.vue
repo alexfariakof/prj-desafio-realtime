@@ -22,9 +22,9 @@
         <FilterSideBar/>
       </div >
       <div >
-        <v-btn  href="" target="_blank"  text style="background-color:#D83367;color:#FFFFFF" >
-          <v-img  alt="Person" class="shrink mr-2" contain :src="require('@/assets/person.png')" transition="scale-transition"  />
-          <span class="mr-2">INCLUIR USUÁRIO</span>
+        <v-btn  href="" target="_blank"  text class="btnIncluirUsuario" >
+          <v-img  alt="Person" class="shrink mr-2 imgBtnUsuario" contain :src="require('@/assets/person.png')" transition="scale-transition" width="20" height="20"  />
+          <span class="mr-2 textBtnUsuario" >INCLUIR USUÁRIO</span>
         </v-btn>
       </div>
 
@@ -125,5 +125,22 @@ export default {
   float: right;
   width: 24px;
   height: 24px;
+}
+.btnIncluirUsuario{
+  width: 200px;
+  height: 48px;
+  border-radius: 4px;
+  background-color:#D83367;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  color:#FFFFFF;
+  padding-left: 16px;
+}
+.imgBtnUsuario{
+  margin-left: 16px;
+}
+.textBtnUsuario{
+  margin-right: 16px;
 }
 </style>

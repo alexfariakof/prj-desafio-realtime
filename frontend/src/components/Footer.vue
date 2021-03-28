@@ -98,8 +98,8 @@ export default {
 
 .radioStatus:checked{
   border-color: #FF8700;
-    color:#FF8700;
-    background: #FF8700;
+  color:#FF8700;
+  background: #FF8700;
 }
 .status{
    width:45px;
@@ -109,8 +109,8 @@ export default {
    font-size:12px;
    color:#FF8700;
    text-align: right;
-    text-align:left;
-    vertical-align: top;
+   text-align:left;
+   vertical-align: top;
 }
 .mensagem{
     width:121px;
