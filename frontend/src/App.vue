@@ -44,9 +44,7 @@
      <v-main>
       <ListaUsuarios v-bind:search="vPesquisa" />
     </v-main>
-    <v-footer >
-    <Footer class="appFooter" />
-    </v-footer>
+      <Footer class="appFooter" />
   </v-app>
 </div>
 </template>
@@ -81,7 +79,7 @@ export default {
   height: 96px;
 }
 .appFooter{
-  width: 1440px;
+  width: 100%;
   height:  47px;
   background-color: #333333;
 }

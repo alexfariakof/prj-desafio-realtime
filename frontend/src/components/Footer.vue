@@ -40,7 +40,7 @@
     <v-col cols="3"></v-col>
     <v-col
       class="text-center"
-      cols="2"
+      cols="4"
     >
        <div class="data">
         <span class="formatData1">{{ semana }}, </span>
@@ -49,13 +49,8 @@
         <span class="formatData2">{{ mes }}</span>
         <span class="formatData1" > de </span>
         <span class="formatData2">{{ ano }}</span>
+        <span class="hora" >// {{ time }}</span>
        </div>
-    </v-col>
-    <v-col
-      class="text-center"
-      cols="2"
-    >
-     <div class="hora" >// {{ time }} </div>
     </v-col>
   </v-footer>
 </template>
@@ -135,7 +130,6 @@ export default {
 }
 .data{
     width:auto;
-    height:16px;
     text-align: right;
     vertical-align: text-top;
 }
@@ -164,5 +158,7 @@ export default {
    color:#FF8700;
    text-align: right;
    vertical-align: text-top;
+   float: right;
+   margin-bottom: 8px;
 }
 </style>
