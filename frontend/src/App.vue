@@ -1,10 +1,9 @@
 <template>
 <div class="appBody">
   <v-app>
-    <div class="appHeader">
-    <v-app-bar app  >
+     <v-app-bar app class="appHeader"  >
       <div class="d-flex align-center">
-        <v-img alt="Realtime Logo" class="shrink mr-2 logo" contain :src="require('@/assets/symbol.svg')" transition="scale-transition" width="80" height="60s'"   />
+        <v-img alt="Realtime Logo" class="shrink mr-2 logo" contain :src="require('@/assets/symbol.svg')" transition="scale-transition" width="80" height="60"   />
         <p class="d-flex align-center divisor">|</p>
         <v-btn class="d-flex align-center boxSecurity" >
           <v-img  alt="Security" contain :src="require('@/assets/security.png')" transition="scale-transition" width="20" height="20" />
@@ -14,8 +13,7 @@
         </v-btn>
       </div>
       <div >
-       <input type="text" class="textPesquisa" placeholder="Pesquisar..." />
-       <v-img salt="Search" class="imgPesquisa" contain :src="require('@/assets/search.png')" width="20" height="20" />
+         <v-text-field class="textPesquisa" v-model="vPesquisa" append-icon="mdi-magnify" label="Pesquisar..." single-line hide-details></v-text-field>
       </div>
       <v-spacer></v-spacer>
       <div >
@@ -43,11 +41,12 @@
         <v-img class="" contain :src="require('@/assets/power.png')" transition="scale-transition"  width="24" height="24" />
       </v-btn>
     </v-app-bar>
-    </div>
-    <v-main>
-      <ListaUsuarios/>
+     <v-main>
+      <ListaUsuarios v-bind:search="vPesquisa" />
     </v-main>
+    <v-footer >
     <Footer class="appFooter" />
+    </v-footer>
   </v-app>
 </div>
 </template>
@@ -72,7 +71,6 @@ export default {
 
 <style scoped>
 .appBody{
-  width: 1440px;
   height: auto;
   margin: 0;
   border: 0;
@@ -83,6 +81,7 @@ export default {
   height: 96px;
 }
 .appFooter{
+  width: 1440px;
   height:  47px;
   background-color: #333333;
 }
@@ -111,7 +110,7 @@ export default {
 .textPesquisa{
   width: 298px;
   height: 30px;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: italic;
   font-weight: 300;
   font-size: 14px;
@@ -131,7 +130,7 @@ export default {
   height: 48px;
   border-radius: 4px;
   background-color:#D83367;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 14px;
   color:#FFFFFF;

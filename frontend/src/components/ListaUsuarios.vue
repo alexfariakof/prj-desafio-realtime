@@ -3,15 +3,19 @@
     <v-card-title>
         <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
     </v-card-title>
-    <v-data-table :headers="headers" :items="lstUsuario" :search="search"></v-data-table>
+    <v-data-table :headers="headers" :items="lstUsuario" dense v-bind:search="search">
+    </v-data-table>
+<span>{{ teste }}</span>
 </v-card>
 </template>
 
 <script>
+import ListaUsuario from '../store/MOCK_DATA.json'
 export default {
+  props: ['search'],
   data () {
     return {
-      search: '',
+      teste: '',
       headers: [{
         align: 'start',
         filterable: false
@@ -45,43 +49,12 @@ export default {
         value: 'acoes'
       }
       ],
-      lstUsuario: [{
-        usuario: 'Frozen Yogurt',
-        email: 159,
-        dtInclusao: 6.0,
-        dtAlteracao: 24,
-        regras: 4.0,
-        status: '1%',
-        acoes: '...'
-      },
-      {
-        usuario: 'Frozen Yogurt',
-        email: 159,
-        dtInclusao: 6.0,
-        dtAlteracao: 24,
-        regras: 4.0,
-        status: '1%',
-        acoes: '...'
-      },
-      {
-        usuario: 'Frozen Yogurt',
-        email: 159,
-        dtInclusao: 6.0,
-        dtAlteracao: 24,
-        regras: 4.0,
-        status: '1%',
-        acoes: '...'
-      },
-      {
-        usuario: 'Frozen Yogurt',
-        email: 159,
-        dtInclusao: 6.0,
-        dtAlteracao: 24,
-        regras: 4.0,
-        status: '1%',
-        acoes: '...'
-      }
-      ]
+      lstUsuario: ListaUsuario
+    }
+  },
+  watch: {
+    seacrh: function (valor) {
+      this.testerch = valor
     }
   }
 }

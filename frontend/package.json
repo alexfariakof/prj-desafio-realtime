@@ -13,6 +13,7 @@
     "core-js": "~3.9.1",
     "moment": "^2.29.1",
     "roboto-fontface": "~0.10.0",
+    "typeface-roboto": "^1.1.13",
     "vue": "~2.6.12",
     "vuetify": "~2.4.8",
     "vuex": "~3.6.2"
