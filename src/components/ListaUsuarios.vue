@@ -15,7 +15,7 @@ export default {
   props: ['search'],
   data () {
     return {
-      teste: '',
+      teste: 'duncionando porrraa ',
       headers: [{
         align: 'start',
         filterable: false
