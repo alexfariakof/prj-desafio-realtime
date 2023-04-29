@@ -1,0 +1,17 @@
+1 - npm init vue@^2 no para tudo 
+  - npm install @vue/cli-service
+   -npm install node-sass
+   -npm install sass-loader
+  - npm install @fontsource/roboto
+  - npm install @mdi/font
+  - npm install vuex@next --save
+  - npm install moment
+  - npm install  --force vuetify@2.4.8  
+  - npm install --force
+
+3 - npm run dev
+4 - eu troco pata start e apenas do npm start para inicializar a alicação
+5 - para enviar para produção 
+     npm run build ou nom build
+
+
